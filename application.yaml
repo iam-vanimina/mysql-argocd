@@ -10,7 +10,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/iam-vanimina/mysql-argocd.git
+    repoURL: https://github.com/iam-vanimina/mysql-argocd.git 
     targetRevision: main   # or a tag/commit hash
     path: .       # folder in repo with Kubernetes YAMLs
     helm:
@@ -19,7 +19,7 @@ spec:
       - values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: roboshop
   syncPolicy:
     automated:
       prune: true           # delete resources not in Git
