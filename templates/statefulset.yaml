@@ -59,7 +59,7 @@ spec:
     spec:
       accessModes: [ "ReadWriteOnce" ]
       storageClassName: {{ .Values.statefulset.storageClass }}
-      allowVolumeExpansion: true
+      
       
       resources:
         requests:
