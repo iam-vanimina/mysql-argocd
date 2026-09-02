@@ -27,20 +27,20 @@ spec:
         - name: MYSQL_DATABASE
           valueFrom:
            secretKeyRef:
-           name: cities-db-secret
-           key: MYSQL_DATABASE
+             name: cities-db-secret
+             key: MYSQL_DATABASE
 
         - name: MYSQL_USER
           valueFrom:
-           secretKeyRef:
-           name: cities-db-secret
-           key: MYSQL_USER
+            secretKeyRef:
+              name: cities-db-secret
+              key: MYSQL_USER
 
         - name: MYSQL_PASSWORD
           valueFrom:
-           secretKeyRef:
-           name: cities-db-secret
-           key: MYSQL_PASSWORD    
+             secretKeyRef:
+              name: cities-db-secret
+              key: MYSQL_PASSWORD    
         volumeMounts:
         - name: mysql
           mountPath: /var/lib/mysql
