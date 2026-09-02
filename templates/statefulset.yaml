@@ -23,10 +23,7 @@ spec:
       containers:
       - name: mysql
         image: vanimina/mysql:{{ .Values.statefulset.version }}
-        volumeMounts:
-        - name: mysql
-          mountPath: /var/lib/mysql
-      env:
+        env:
         - name: MYSQL_DATABASE
           valueFrom:
            secretKeyRef:
@@ -44,6 +41,10 @@ spec:
            secretKeyRef:
            name: cities-db-secret
            key: MYSQL_PASSWORD    
+        volumeMounts:
+        - name: mysql
+          mountPath: /var/lib/mysql
+      
   # Instead of creating a PVC resource, you can directly provide in statefulset
   volumeClaimTemplates:
   - metadata:
