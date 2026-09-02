@@ -1,5 +1,5 @@
 statefulset:
   version: 1.2.0
-  storage: 3Gi
+  storage: 4Gi
   replicas: 3
   storageClass: "" #docker-desktop or # aws ebs ebs-sc
