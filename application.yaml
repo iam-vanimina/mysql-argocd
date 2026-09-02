@@ -20,6 +20,10 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: roboshop
+<<<<<<< HEAD
+    #namespace: argocd
+=======
+>>>>>>> 86b383d931ca27953d7acff16b5096241f68c1b7
   syncPolicy:
     automated:
       prune: true           # delete resources not in Git

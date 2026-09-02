@@ -26,6 +26,24 @@ spec:
         volumeMounts:
         - name: mysql
           mountPath: /var/lib/mysql
+      env:
+        - name: MYSQL_DATABASE
+          valueFrom:
+           secretKeyRef:
+           name: cities-db-secret
+           key: MYSQL_DATABASE
+
+        - name: MYSQL_USER
+          valueFrom:
+           secretKeyRef:
+           name: cities-db-secret
+           key: MYSQL_USER
+
+        - name: MYSQL_PASSWORD
+          valueFrom:
+           secretKeyRef:
+           name: cities-db-secret
+           key: MYSQL_PASSWORD    
   # Instead of creating a PVC resource, you can directly provide in statefulset
   volumeClaimTemplates:
   - metadata:
@@ -33,7 +51,8 @@ spec:
       namespace: roboshop
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "ebs-sc"
+      storageClassName: {{ .Values.statefulset.storageClass }}
+      
       resources:
         requests:
           storage: {{ .Values.statefulset.storage }}
