@@ -36,6 +36,12 @@ spec:
               name: cities-db-secret
               key: MYSQL_USER
 
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+             secretKeyRef:
+              name: cities-db-secret
+              key: MYSQL_ROOT_PASSWORD        
+
         - name: MYSQL_PASSWORD
           valueFrom:
              secretKeyRef:
