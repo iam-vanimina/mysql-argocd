@@ -8,7 +8,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
 spec:
-  project: default
+  project: roboshop #default
   source:
     repoURL: https://github.com/iam-vanimina/mysql-argocd.git 
     targetRevision: main   # or a tag/commit hash
