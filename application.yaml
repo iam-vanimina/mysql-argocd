@@ -19,7 +19,8 @@ spec:
       - values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: roboshop
+    #namespace: argocd
   syncPolicy:
     automated:
       prune: true           # delete resources not in Git
